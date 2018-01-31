@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title></title>
+	<style type="text/css"></style>
+	<script type="text/javascript">
+	function showMenu(){
+           document.write("<div style = 'border:1px solid #333;border-radius:10px;width:450px'>");
+           document.write("<h1>******图书管理系统******</h1>")
+           document.write("<ol>")
+           document.write("<li><a href = '#' onclick = 'watchBook()'>查看</a></li>")
+           document.write("<li><a href = '#' onclick = 'addBook()'>新增</a></li>")
+           document.write("<li><a href = '#' onclick = 'addMultiBook()'>批量新增</a></li>")
+           document.write("<li><a href = '#' onclick = 'lendBook()'>借出</a></li>")
+           document.write("<li><a href = '#' onclick = 'sendBook()'>归还</a></li>")
+           document.write("<li><a href = '#' onclick = 'deleteBook()'>删除</a></li>")
+           document.write("</ol>")
+           document.write("<h1>************************</h1>")
+           document.write("</div>")
+           document.close();
+          }
+          showMenu();
+           var bookNames = ["红楼梦","三国演义","水浒传"];
+		   var states = [true,false,true];
+		   var dates = ["","2015-12-22",""];
+		   var nums = [0,1,0];
+
+
+           function watchBook(){
+           	  document.write("<table border = '1' cellspacing = '0' cellpadding = '10'>")
+           	  document.write("<tr>")
+           	  document.write('<th>序号</th> <th>书名</th> <th>状态</th> <th>借出日期</th> <th>借出次数</th>')
+           	  document.write("</tr>")
+           	  for(var i = 0;i<bookNames.length;i++){
+           	  	var s = states[i]?"可借出":"不可借";
+           	  	document.write("<tr>")
+           	  	document.write('<td>'+(i+1)+'</td> <td>'+bookNames[i]+'</td> <td>'+s+'</td> <td>'+dates[i]+'</td> <td>'+nums[i]+'</td>')
+           	    document.write("</tr>")
+
+           	  }
+           	  document.write("</table>")
+           	  document.write("<button onclick ='showMenu()'>返回主页面</button>")
+           	  document.close()
+
+           }
+           function addBook(){
+           	   var name = prompt("请输入图书姓名");
+           	   if (bookNames.indexOf(name) !=-1) {
+           	   	  alert("该书已经存在");
+           	   	  return;
+           	   }
+           	   if (name == null)
+				{
+					return;
+				}
+
+           	
+           }
+           function addMultiBook(){
+           	var name = prompt("请输入图书姓名");
+           	   if (name == null)
+				{
+					return;
+				}
+				
+           	
+           }
+           function lendBook(){
+           	alert("调用");
+           	
+           }
+           function sendBook(){
+           	alert("调用");
+           }
+           function deleteBook(){
+           	alert("调用");
+           	
+           }
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
